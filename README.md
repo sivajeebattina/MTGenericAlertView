@@ -14,7 +14,7 @@
 
 6. Adaptive to device orientations, screen sizes, keyboard show, dismiss.
 
-# Usage
+## Usage
 
 Import the PCSAlertViewContainer.h in your class
 
