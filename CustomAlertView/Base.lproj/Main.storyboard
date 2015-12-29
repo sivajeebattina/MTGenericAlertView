@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twJ-iO-KYo">
+                                <rect key="frame" x="234" y="50" width="133" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2QH-Ub-lra"/>
+                                    <constraint firstAttribute="width" constant="133" id="TQI-V8-eZq"/>
+                                </constraints>
+                                <state key="normal" title="AlertWithTableView"/>
+                                <connections>
+                                    <action selector="alertWithTableViewClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="048-m6-lBI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWM-s1-udK">
+                                <rect key="frame" x="227" y="111" width="147" height="30"/>
+                                <state key="normal" title="AlertWithCustomTitle"/>
+                                <connections>
+                                    <action selector="alertWithCustomTitleClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WfO-WM-99J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQi-Pz-LIk">
+                                <rect key="frame" x="215" y="168" width="171" height="30"/>
+                                <state key="normal" title="AlertWithCustomButtons"/>
+                                <connections>
+                                    <action selector="alertWithCustomButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8SR-oS-WQ4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mO1-re-oFi">
+                                <rect key="frame" x="277" y="228" width="47" height="30"/>
+                                <state key="normal" title="PopUp"/>
+                                <connections>
+                                    <action selector="popUpButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cnw-qR-OFj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QQi-Pz-LIk" firstAttribute="top" secondItem="bWM-s1-udK" secondAttribute="bottom" constant="27" id="0Qb-89-bls"/>
+                            <constraint firstItem="twJ-iO-KYo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1jD-0R-KoK"/>
+                            <constraint firstItem="bWM-s1-udK" firstAttribute="top" secondItem="twJ-iO-KYo" secondAttribute="bottom" constant="31" id="KVZ-sd-v6D"/>
+                            <constraint firstItem="QQi-Pz-LIk" firstAttribute="centerX" secondItem="bWM-s1-udK" secondAttribute="centerX" id="UL5-FO-dHo"/>
+                            <constraint firstItem="twJ-iO-KYo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="UvW-If-1KG"/>
+                            <constraint firstItem="mO1-re-oFi" firstAttribute="top" secondItem="QQi-Pz-LIk" secondAttribute="bottom" constant="30" id="ZfY-72-VTG"/>
+                            <constraint firstItem="mO1-re-oFi" firstAttribute="centerX" secondItem="QQi-Pz-LIk" secondAttribute="centerX" id="cHE-BE-0b9"/>
+                            <constraint firstItem="bWM-s1-udK" firstAttribute="centerX" secondItem="twJ-iO-KYo" secondAttribute="centerX" id="qe4-gw-9H9"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
