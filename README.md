@@ -1,6 +1,6 @@
 # PCSAlertView
 
-# Main Features:
+### Main Features:
 
 1. Support for any version (As this alert view is based on UIView, No deprecation).
 
@@ -14,7 +14,7 @@
 
 6. Adaptive to device orientations, screen sizes, keyboard show, dismiss.
 
-## Usage
+###Usage
 
 Import the PCSAlertViewContainer.h in your class
 
