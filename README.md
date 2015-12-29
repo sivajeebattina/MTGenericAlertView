@@ -17,12 +17,10 @@
 # Usage
 
 Import the PCSAlertViewContainer.h in your class
-```
-import "PCSAlertViewContainer.h"
-``
+
+    import "PCSAlertViewContainer.h"
 
 Add delegate to get notified through delegate methods when alertview button clicked
-
 
     @interface ViewController : UIViewController<PCSAlertViewContainerDelegate>
 
