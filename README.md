@@ -17,28 +17,44 @@
 ###Usage
 
 Import the PCSAlertViewContainer.h in your class
-
+```objective-c
     import "PCSAlertViewContainer.h"
+```
 
 Add delegate to get notified through delegate methods when alertview button clicked
-
+```objective-c
     @interface ViewController : UIViewController<PCSAlertViewContainerDelegate>
+```
 
 in your .m file add these lines of code
-
+```objective-c
     PCSAlertViewContainer *alertViewContainer = [[PCSAlertViewContainer alloc] initWithTitle:@"Alert!!" titleColor:nil titleFont:nil backgroundImage:nil];
-    [alertViewContainer setContainerViewContent:[self createSampleView]];
+    [alertViewContainer setContainerViewContent:[self createSampleView]]; \\Add customized view to this method
     alertViewContainer.tag = 3;
     [alertViewContainer setDelegate:self];
     [alertViewContainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
     [alertViewContainer show];
+```
 
-
- You may use a Block, rather than a delegate.
-
+You may use a Block, rather than a delegate.
+```objective-c
     [alertViewContainer setAlertViewButtonActionCompletionHandler:^(PCSAlertViewContainer *alertView, int buttonIndex) {
     NSLog(@"Block: Button at position %d is clicked on alertView %d.", buttonIndex, (int)alertView.tag);
     [alertView close];
     }];
+```
+### Switch to PopUp view
+To Change alertView into Popup, set Boolean value for property **isPopUpView** to **YES**
+```objective-c
+    alertViewContainer.isPopUpView = YES
+```
+### Requirements
+
+- iOS 6.1 or higher
+- Automatic Reference Counting (ARC)
+
+### Author
+
+- [Sivajee Battina](https://github.com/sivajeebattina) ([@sivajeebattina](https://facebook.com/shivajibattina))
 
 
