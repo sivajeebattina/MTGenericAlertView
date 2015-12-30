@@ -14,6 +14,10 @@
 
 6. Adaptive to device orientations, screen sizes, keyboard show, dismiss.
 
+### Installation
+- Download the files or clone the project
+- Drop PCSAlertViewContainer.h and PCSAlertViewContainer.m files in your project
+
 ###Usage
 
 Import the PCSAlertViewContainer.h in your class
@@ -34,6 +38,14 @@ in your .m file add these lines of code
     [alertViewContainer setDelegate:self];
     [alertViewContainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
     [alertViewContainer show];
+```
+### Delegate methods
+```objective-c
+- (void)alertViewButtonTouchUpInside: (PCSAlertViewContainer *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
+{
+NSLog(@"Delegate: Button at position %d is clicked on alertView %d.", (int)buttonIndex, (int)[alertView tag]);
+[alertView close];
+}
 ```
 
 You may use a Block, rather than a delegate.
