@@ -6,14 +6,14 @@
 //  Copyright (c) 2015 Paradigmcreatives. All rights reserved.
 //
 
-#import "PCSAlertViewContainer.h"
+#import "MTGenericAlertView.h"
 #import <QuartzCore/QuartzCore.h>
 
 const static CGFloat kAlertViewDefaultButtonHeight       = 40;
 const static CGFloat kAlertViewDefaultButtonSpacerHeight = 1;
 const static CGFloat kAlertViewCornerRadius              = 7;
 
-@implementation PCSAlertViewContainer
+@implementation MTGenericAlertView
 
 CGFloat buttonHeight = 0;
 CGFloat buttonSpacerHeight = 0;
@@ -294,17 +294,25 @@ CGFloat alertTitleLabelHeight = 44;
 
 - (void)addPopUpCloseButton: (UIView *)container {
     CGSize containerSize = [self getContainerSize];
+    if (!_popUpCloseButton) {
+        
+    _popUpCloseButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _popUpCloseButton.frame= CGRectMake(container.frame.origin.x+containerSize.width-18,container.frame.origin.y-15, 30, 30);
+    [_popUpCloseButton addTarget:self action:@selector(removePopUp) forControlEvents:UIControlEventTouchUpInside];
+    [_popUpCloseButton setBackgroundImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
+    [self addSubview:_popUpCloseButton];
     
-    UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    closeButton.frame= CGRectMake(container.frame.origin.x+containerSize.width-18,container.frame.origin.y-15, 30, 30);
-    [closeButton addTarget:self action:@selector(removePopUp) forControlEvents:UIControlEventTouchUpInside];
-    [closeButton setBackgroundImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
-    [self addSubview:closeButton];
-    
+    }
 }
 
--(void)removePopUp {
+- (void) removePopUp {
     [self close];
+}
+
+- (void) setPopUpFrame{
+    CGSize containerSize = [self getContainerSize];
+
+     self.popUpCloseButton.frame= CGRectMake(_containerView.frame.origin.x+containerSize.width-18,_containerView.frame.origin.y-15, _popUpCloseButton.frame.size.width, _popUpCloseButton.frame.size.width);
 }
 /***********************************************/
 #pragma -mark IBAction Methods
@@ -321,7 +329,7 @@ CGFloat alertTitleLabelHeight = 44;
 }
 
 // Default button behaviour
-- (void)alertViewButtonTouchUpInside: (PCSAlertViewContainer *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+- (void)alertViewButtonTouchUpInside: (MTGenericAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSLog(@"Button Clicked! %d, %d", (int)buttonIndex, (int)[alertView tag]);
     [self close];
 }
@@ -380,6 +388,9 @@ CGFloat alertTitleLabelHeight = 44;
     [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionTransitionNone
                      animations:^{
                          self.containerView.frame = CGRectMake((screenSize.width - containerSize.width) / 2, (screenSize.height - keyboardSize.height - containerSize.height) / 2, containerSize.width, containerSize.height);
+                         
+                          [self setPopUpFrame];
+                         
                      }
                      completion:nil
      ];
@@ -392,6 +403,8 @@ CGFloat alertTitleLabelHeight = 44;
     [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionTransitionNone
                      animations:^{
                          self.containerView.frame = CGRectMake((screenSize.width - containerSize.width) / 2, (screenSize.height - containerSize.height) / 2, containerSize.width, containerSize.height);
+                         
+                         [self setPopUpFrame];
                      }
                      completion:nil
      ];
@@ -439,12 +452,13 @@ CGFloat alertTitleLabelHeight = 44;
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
     CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
     
-    [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionTransitionNone
+    [UIView animateWithDuration:0.0f delay:0.0 options:UIViewAnimationOptionTransitionNone
                      animations:^{
                          CGSize containerSize = [self getContainerSize];
                          CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
                          self.frame = CGRectMake(0, 0, screenWidth, screenHeight);
                          self.containerView.frame = CGRectMake((screenWidth - containerSize.width) / 2, (screenHeight - keyboardSize.height - containerSize.height) / 2, containerSize.width, containerSize.height);
+                         [self setPopUpFrame];
                      }
                      completion:nil
      ];

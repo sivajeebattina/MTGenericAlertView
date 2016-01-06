@@ -8,23 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol PCSAlertViewContainerDelegate
+@protocol MTGenericAlertViewDelegate
 
 - (void)alertViewButtonTouchUpInside:(id)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 
 @end
 
-@interface PCSAlertViewContainer : UIView<PCSAlertViewContainerDelegate>
+@interface MTGenericAlertView : UIView<MTGenericAlertViewDelegate>
 
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) UIView *containerViewContent; 
 @property (nonatomic, strong) NSArray *customButtonTitlesArray;
 @property (nonatomic, strong) NSArray *customButtonsArray;
 @property (nonatomic, strong) UILabel *alertTitleLabel;
+@property (nonatomic, strong) UIButton *popUpCloseButton;
 @property (nonatomic ,assign) BOOL isPopUpView;
-@property (nonatomic, assign) id<PCSAlertViewContainerDelegate> delegate;
+@property (nonatomic, assign) id<MTGenericAlertViewDelegate> delegate;
 
-@property (copy) void (^AlertViewButtonActionCompletionHandler)(PCSAlertViewContainer *alertView, int buttonIndex) ;
+@property (copy) void (^AlertViewButtonActionCompletionHandler)(MTGenericAlertView *alertView, int buttonIndex) ;
 
 
 - (id)init;
@@ -35,6 +36,6 @@
 
 - (void)close;
 
-- (void)setAlertViewButtonActionCompletionHandler:(void (^)(PCSAlertViewContainer *alertView, int buttonIndex))onButtonTouchUpInside;
+- (void)setAlertViewButtonActionCompletionHandler:(void (^)(MTGenericAlertView *alertView, int buttonIndex))onButtonTouchUpInside;
 
 @end

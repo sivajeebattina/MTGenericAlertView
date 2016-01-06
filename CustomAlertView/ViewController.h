@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PCSAlertViewContainer.h"
+#import "MTGenericAlertView.h"
 
-@interface ViewController : UIViewController<PCSAlertViewContainerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface ViewController : UIViewController<MTGenericAlertViewDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource>
 
 
 @end

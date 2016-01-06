@@ -19,14 +19,14 @@
 }
 
 - (IBAction)alertWithTableViewClicked:(id)sender {
-    PCSAlertViewContainer *alertViewContainer = [[PCSAlertViewContainer alloc] initWithTitle:@"Alert!!" titleColor:nil titleFont:nil backgroundImage:nil];
+    MTGenericAlertView *alertViewContainer = [[MTGenericAlertView alloc] initWithTitle:@"Alert!!" titleColor:nil titleFont:nil backgroundImage:nil];
     [alertViewContainer setContainerViewContent:[self createSampleView]];
     alertViewContainer.tag = 3;
     [alertViewContainer setDelegate:self];
     [alertViewContainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
     
     // You may use a Block, rather than a delegate.
-    [alertViewContainer setAlertViewButtonActionCompletionHandler:^(PCSAlertViewContainer *alertView, int buttonIndex) {
+    [alertViewContainer setAlertViewButtonActionCompletionHandler:^(MTGenericAlertView *alertView, int buttonIndex) {
         NSLog(@"Block: Button at position %d is clicked on alertView %d.", buttonIndex, (int)alertView.tag);
         [alertView close];
     }];
@@ -34,13 +34,13 @@
     [alertViewContainer show];
 }
 - (IBAction)alertWithCustomTitleClicked:(id)sender {
-    PCSAlertViewContainer *alertViewContainer = [[PCSAlertViewContainer alloc] initWithTitle:@"Alert!!" titleColor:nil titleFont:nil backgroundImage:[UIImage imageNamed:@"image.jpeg"]];
+    MTGenericAlertView *alertViewContainer = [[MTGenericAlertView alloc] initWithTitle:@"Alert!!" titleColor:nil titleFont:nil backgroundImage:[UIImage imageNamed:@"image.jpeg"]];
     [alertViewContainer setContainerViewContent:[self createSampleView]];
     [alertViewContainer setDelegate:self];
     [alertViewContainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
     
     // You may use a Block, rather than a delegate.
-    [alertViewContainer setAlertViewButtonActionCompletionHandler:^(PCSAlertViewContainer *alertViewContainer, int buttonIndex) {
+    [alertViewContainer setAlertViewButtonActionCompletionHandler:^(MTGenericAlertView *alertViewContainer, int buttonIndex) {
         NSLog(@"Block: Button at position %d is clicked on alertView %d.", buttonIndex, (int)[alertViewContainer tag]);
         [alertViewContainer close];
     }];
@@ -49,7 +49,7 @@
 
 }
 - (IBAction)alertWithCustomButtonClicked:(id)sender {
-    PCSAlertViewContainer *alertViewContainer = [[PCSAlertViewContainer alloc] initWithTitle:@"Alert!!" titleColor:nil titleFont:nil backgroundImage:nil];
+    MTGenericAlertView *alertViewContainer = [[MTGenericAlertView alloc] initWithTitle:@"Alert!!" titleColor:nil titleFont:nil backgroundImage:nil];
     [alertViewContainer setContainerViewContent:[self createSampleView]];
     [alertViewContainer setDelegate:self];
     [alertViewContainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"Close1",@"Done",@"OK",@"Hey" ,nil]];
@@ -62,7 +62,7 @@
 
     
     // You may use a Block, rather than a delegate.
-    [alertViewContainer setAlertViewButtonActionCompletionHandler:^(PCSAlertViewContainer *alertViewContainer, int buttonIndex) {
+    [alertViewContainer setAlertViewButtonActionCompletionHandler:^(MTGenericAlertView *alertViewContainer, int buttonIndex) {
         NSLog(@"Block: Button at position %d is clicked on alertView %d.", buttonIndex, (int)[alertViewContainer tag]);
         [alertViewContainer close];
     }];
@@ -71,7 +71,7 @@
 
 }
 - (IBAction)popUpButtonClicked:(id)sender {
-    PCSAlertViewContainer *alertViewContainer = [[PCSAlertViewContainer alloc] init];
+    MTGenericAlertView *alertViewContainer = [[MTGenericAlertView alloc] init];
     alertViewContainer.isPopUpView = YES;
     [alertViewContainer setContainerViewContent:[self createSampleView]];
     [alertViewContainer setDelegate:self];
@@ -80,7 +80,7 @@
 -(void)closeButtonCalled{
 
 }
-- (void)alertViewButtonTouchUpInside: (PCSAlertViewContainer *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
+- (void)alertViewButtonTouchUpInside: (MTGenericAlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
 {
     NSLog(@"Delegate: Button at position %d is clicked on alertView %d.", (int)buttonIndex, (int)[alertView tag]);
     [alertView close];
@@ -97,16 +97,16 @@
 //    UILabel *lablel1=[[UILabel alloc] initWithFrame:CGRectMake(10, 10, sampleView.frame.size.width-20, 20)];
 //    lablel1.text = @"Hey hello! this is sample text";
 //
-//    UITextField *textField1 = [[UITextField alloc] initWithFrame:CGRectMake(10, 40, sampleView.frame.size.width-20, 20)];
-//    [textField1 setBackgroundColor:[UIColor grayColor]];
-//    textField1.delegate = self;
-//    [sampleView addSubview:textField1];
-    //[sampleView addSubview:lablel1];
-    
-    UITableView *tv=[[UITableView alloc] initWithFrame:sampleView.frame];
-    tv.delegate =self;
-    tv.dataSource = self;
-    [sampleView addSubview:tv];
+    UITextField *textField1 = [[UITextField alloc] initWithFrame:CGRectMake(10, 40, sampleView.frame.size.width-20, 20)];
+    [textField1 setBackgroundColor:[UIColor grayColor]];
+    textField1.delegate = self;
+    [sampleView addSubview:textField1];
+   // [sampleView addSubview:lablel1];
+//    
+//    UITableView *tv=[[UITableView alloc] initWithFrame:sampleView.frame];
+//    tv.delegate =self;
+//    tv.dataSource = self;
+//    [sampleView addSubview:tv];
     return sampleView;
 }
 
