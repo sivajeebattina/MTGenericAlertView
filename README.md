@@ -16,7 +16,7 @@
 
 ### Installation
 - Download the files or clone the project
-- Drop MTGenericAlertView.h and MTGenericAlertView.m files in your project
+- Drop MTGenericAlertView folder in your project
 
 ## Screenshots
 
