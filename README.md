@@ -18,6 +18,11 @@
 - Download the files or clone the project
 - Drop PCSAlertViewContainer.h and PCSAlertViewContainer.m files in your project
 
+## Screenshots
+
+![CustomAlertView](./Screens/Example1.png "Example View")
+![CustomAlertView](./Screens/Example2.png "Example View")
+
 ###Usage
 
 Import the PCSAlertViewContainer.h in your class

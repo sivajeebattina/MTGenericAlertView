@@ -297,12 +297,15 @@ CGFloat alertTitleLabelHeight = 44;
     if (!_popUpCloseButton) {
         
     _popUpCloseButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _popUpCloseButton.frame= CGRectMake(container.frame.origin.x+containerSize.width-18,container.frame.origin.y-15, 30, 30);
+    _popUpCloseButton.frame= CGRectMake(container.frame.origin.x+containerSize.width-15,container.frame.origin.y-15, 30, 30);
     [_popUpCloseButton addTarget:self action:@selector(removePopUp) forControlEvents:UIControlEventTouchUpInside];
     [_popUpCloseButton setBackgroundImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
-    [self addSubview:_popUpCloseButton];
     
+    }else {
+         _popUpCloseButton.frame= CGRectMake(container.frame.origin.x+containerSize.width-_popUpCloseButton.frame.size.height/2,container.frame.origin.y-_popUpCloseButton.frame.size.height/2, _popUpCloseButton.frame.size.width, _popUpCloseButton.frame.size.height);
+        [_popUpCloseButton addTarget:self action:@selector(removePopUp) forControlEvents:UIControlEventTouchUpInside];
     }
+    [self addSubview:_popUpCloseButton];
 }
 
 - (void) removePopUp {
