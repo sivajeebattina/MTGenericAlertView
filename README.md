@@ -23,8 +23,6 @@
 ![CustomAlertView](./Screens/Example1.png "Example View")
 ![CustomAlertView](./Screens/Example2.png "Example View")
 ![CustomAlertView](./Screens/Example3.png "Example View")
-![CustomAlertView](./Screens/Example4.png "Example View")
-![CustomAlertView](./Screens/Example5.png "Example View")
 
 ###Usage
 
