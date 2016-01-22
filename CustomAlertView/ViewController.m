@@ -48,19 +48,19 @@
 }
 
 - (IBAction)alertWithCustomButtonClicked:(id)sender {
-    MTGenericAlertView *alertViewContainer = [[MTGenericAlertView alloc] initWithTitle:@"NetWork Error!!" titleColor:nil titleFont:nil backgroundImage:nil];
+    MTGenericAlertView *alertView = [[MTGenericAlertView alloc] initWithTitle:@"NetWork Error!!" titleColor:nil titleFont:nil backgroundImage:nil];
 
-    [alertViewContainer setContainerViewContent:[self addGifAnimation]];
-    [alertViewContainer setDelegate:self];
-    [alertViewContainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"Close1",@"Done",@"OK",@"Hey" ,nil]];
+    [alertView setContainerViewContent:[self addGifAnimation]];
+    [alertView setDelegate:self];
+    [alertView setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"Close1",@"Done",@"OK",@"Hey" ,nil]];
     
     // You may use a Block, rather than a delegate.
-    [alertViewContainer setAlertViewButtonActionCompletionHandler:^(MTGenericAlertView *alertViewContainer, int buttonIndex) {
+    [alertView setAlertViewButtonActionCompletionHandler:^(MTGenericAlertView *alertViewContainer, int buttonIndex) {
         NSLog(@"Block: Button at position %d is clicked on alertView %d.", buttonIndex, (int)[alertViewContainer tag]);
         [alertViewContainer close];
     }];
     
-    [alertViewContainer show];
+    [alertView show];
 
 }
 - (IBAction)popUpButtonClicked:(id)sender {

@@ -1,4 +1,4 @@
-# PCSAlertView
+# MTGenericAlertView
 
 ### Main Features:
 
@@ -16,7 +16,7 @@
 
 ### Installation
 - Download the files or clone the project
-- Drop PCSAlertViewContainer.h and PCSAlertViewContainer.m files in your project
+- Drop MTGenericAlertView and MTGenericAlertView.m files in your project
 
 ## Screenshots
 
@@ -26,28 +26,28 @@
 
 ###Usage
 
-Import the PCSAlertViewContainer.h in your class
+Import the MTGenericAlertView in your class
 ```objective-c
-    import "PCSAlertViewContainer.h"
+    import "MTGenericAlertView"
 ```
 
 Add delegate to get notified through delegate methods when alertview button clicked
 ```objective-c
-    @interface ViewController : UIViewController<PCSAlertViewContainerDelegate>
+    @interface ViewController : UIViewController<MTGenericAlertViewDelegate>
 ```
 
 in your .m file add these lines of code
 ```objective-c
-    PCSAlertViewContainer *alertViewContainer = [[PCSAlertViewContainer alloc] initWithTitle:@"Alert!!" titleColor:nil titleFont:nil backgroundImage:nil];
-    [alertViewContainer setContainerViewContent:[self createSampleView]]; \\Add customized view to this method
-    alertViewContainer.tag = 3;
-    [alertViewContainer setDelegate:self];
-    [alertViewContainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
-    [alertViewContainer show];
+    MTGenericAlertView *MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:@"Alert!!" titleColor:nil titleFont:nil backgroundImage:nil];
+    [MTGenericAlertViewtainer setContainerViewContent:[self createSampleView]]; \\Add customized view to this method
+    MTGenericAlertViewtainer.tag = 3;
+    [MTGenericAlertViewtainer setDelegate:self];
+    [MTGenericAlertViewtainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
+    [MTGenericAlertViewtainer show];
 ```
 ### Delegate methods
 ```objective-c
-- (void)alertViewButtonTouchUpInside: (PCSAlertViewContainer *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
+- (void)alertViewButtonTouchUpInside: (MTGenericAlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
 {
 NSLog(@"Delegate: Button at position %d is clicked on alertView %d.", (int)buttonIndex, (int)[alertView tag]);
 [alertView close];
@@ -56,7 +56,7 @@ NSLog(@"Delegate: Button at position %d is clicked on alertView %d.", (int)butto
 
 You may use a Block, rather than a delegate.
 ```objective-c
-    [alertViewContainer setAlertViewButtonActionCompletionHandler:^(PCSAlertViewContainer *alertView, int buttonIndex) {
+    [MTGenericAlertViewtainer setAlertViewButtonActionCompletionHandler:^(MTGenericAlertView *alertView, int buttonIndex) {
     NSLog(@"Block: Button at position %d is clicked on alertView %d.", buttonIndex, (int)alertView.tag);
     [alertView close];
     }];
@@ -64,7 +64,7 @@ You may use a Block, rather than a delegate.
 ### Switch to PopUp view
 To Change alertView into Popup, set Boolean value for property **isPopUpView** to **YES**
 ```objective-c
-    alertViewContainer.isPopUpView = YES
+    MTGenericAlertViewtainer.isPopUpView = YES
 ```
 ### Requirements
 
