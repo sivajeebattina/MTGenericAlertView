@@ -27,14 +27,14 @@
     MTGenericAlertView *alertView = [[MTGenericAlertView alloc] initWithTitle:@"List of items in TableView!!" titleColor:nil titleFont:nil backgroundImage:nil];
     alertView.delegate = self;
     [alertView setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
-    [alertView setContainerViewContent:[self addTableView]];
+    [alertView setCustomInputView:[self addTableView]];
     [alertView show];
 }
 
 -(IBAction)alertWithTextView:(id)sender {
     MTGenericAlertView *alertView = [[MTGenericAlertView alloc] init];
     alertView.delegate = self;
-    [alertView setContainerViewContent:todoTextBGView];
+    [alertView setCustomInputView:todoTextBGView];
     [alertView setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"Cancel",@"OK",nil]];
     [alertView show];
 }
@@ -42,7 +42,7 @@
 - (IBAction)whatsAppLikeAlertView:(id)sender {
    MTGenericAlertView *alertView = [[MTGenericAlertView alloc] initWithTitle:@"A Message From Unknown" titleColor:[UIColor whiteColor] titleFont:nil backgroundImage:[self imageFromColor:[UIColor colorWithRed:13.0/255.0f green:77.0/255.0f blue:68.0/255.0f alpha:1.0f]]];
     [alertView setDelegate:self];
-    [alertView setContainerViewContent:[self createWhatsAppLikeAlert]];
+    [alertView setCustomInputView:[self createWhatsAppLikeAlert]];
     [alertView setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",@"View",nil]];
     [alertView show];
 }
@@ -50,7 +50,7 @@
 - (IBAction)alertWithCustomButtonClicked:(id)sender {
     MTGenericAlertView *alertView = [[MTGenericAlertView alloc] initWithTitle:@"NetWork Error!!" titleColor:nil titleFont:nil backgroundImage:nil];
 
-    [alertView setContainerViewContent:[self addGifAnimation]];
+    [alertView setCustomInputView:[self addGifAnimation]];
     [alertView setDelegate:self];
     [alertView setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"Close1",@"Done",@"OK",@"Hey" ,nil]];
     
@@ -69,10 +69,11 @@
     //Add close button only to handle close button action. Other wise by default close button will be added.
     alertView.popUpCloseButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
     [alertView.popUpCloseButton setBackgroundImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
-    [alertView setContainerViewContent:[self addFilterView]];
+    [alertView setCustomInputView:[self addFilterView]];
     alertView.isPopUpView = YES;
     [alertView setDelegate:self];
     [alertView show];
+
 }
 
 -(void)closeButtonCalled{
@@ -136,7 +137,7 @@
 }
 
 #pragma -mark Alert Delegate methods
-- (void)alertViewButtonTouchUpInside: (MTGenericAlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
+- (void)alertView: (MTGenericAlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
 {
     NSLog(@"Delegate: Button at position %d is clicked on alertView %d.", (int)buttonIndex, (int)[alertView tag]);
     [alertView close];

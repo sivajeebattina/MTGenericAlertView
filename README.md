@@ -39,7 +39,7 @@ Add delegate to get notified through delegate methods when alertview button clic
 in your .m file add these lines of code
 ```objective-c
     MTGenericAlertView *MTGenericAlertViewtainer = [[MTGenericAlertView alloc] initWithTitle:@"Alert!!" titleColor:nil titleFont:nil backgroundImage:nil];
-    [MTGenericAlertViewtainer setContainerViewContent:[self createSampleView]]; \\Add customized view to this method
+    [MTGenericAlertViewtainer setCustomInputView:[self createSampleView]]; \\Add customized view to this method
     MTGenericAlertViewtainer.tag = 3;
     [MTGenericAlertViewtainer setDelegate:self];
     [MTGenericAlertViewtainer setCustomButtonTitlesArray:[NSMutableArray arrayWithObjects:@"OK",nil]];
@@ -47,7 +47,7 @@ in your .m file add these lines of code
 ```
 ### Delegate methods
 ```objective-c
-- (void)alertViewButtonTouchUpInside: (MTGenericAlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
+- (void)alertView: (MTGenericAlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
 {
 NSLog(@"Delegate: Button at position %d is clicked on alertView %d.", (int)buttonIndex, (int)[alertView tag]);
 [alertView close];

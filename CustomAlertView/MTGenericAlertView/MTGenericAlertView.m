@@ -1,6 +1,6 @@
 //
-//  AlertViewContainer.m
-//  CustomAlertView
+//  MTGenericAlertView.m
+//  MTGenericAlertView
 //
 //  Created by SivajeeBattina on 8/12/15.
 //  Copyright (c) 2015 Paradigmcreatives. All rights reserved.
@@ -18,17 +18,6 @@ const static CGFloat kAlertViewCornerRadius              = 7;
 CGFloat buttonHeight = 0;
 CGFloat buttonSpacerHeight = 0;
 CGFloat alertTitleLabelHeight = 44;
-/***********************************************/
-#pragma -mark Deallocate Method
-/***********************************************/
-
-- (void)dealloc {
-    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-}
 
 /***********************************************/
 #pragma -mark initialization Methods
@@ -145,8 +134,8 @@ CGFloat alertTitleLabelHeight = 44;
 
 // Creates the container view here: create the container, then add the custom content and buttons
 - (UIView *)createContainerView {
-    if (self.containerViewContent == NULL) {
-        self.containerViewContent = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 150)];
+    if (self.customInputView == NULL) {
+        self.customInputView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 150)];
     }
     
     CGSize screenSize = [self getScreenSize];
@@ -158,9 +147,9 @@ CGFloat alertTitleLabelHeight = 44;
     if (self.alertTitleLabel) {
         self.alertTitleLabel.frame = CGRectMake(0, 0, containerSize.width, alertTitleLabelHeight);
         
-        CGRect contentFrame = self.containerViewContent.frame;
+        CGRect contentFrame = self.customInputView.frame;
         contentFrame.origin.y += CGRectGetHeight(self.alertTitleLabel.frame);
-        self.containerViewContent.frame = contentFrame;
+        self.customInputView.frame = contentFrame;
     }
     
     // This is the container; we attach the custom content and the buttons to this one
@@ -191,7 +180,7 @@ CGFloat alertTitleLabelHeight = 44;
         [container addSubview:self.alertTitleLabel];
     }
     
-    [container addSubview:self.containerViewContent];
+    [container addSubview:self.customInputView];
     
     if (self.isPopUpView) {
         
@@ -219,7 +208,7 @@ CGFloat alertTitleLabelHeight = 44;
         for (int i=0; i<[self.customButtonTitlesArray count]; i++) {
             UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
             closeButton.frame = CGRectMake(i * buttonWidth , container.bounds.size.height - buttonHeight, buttonWidth, buttonHeight);
-            [closeButton addTarget:self action:@selector(alertViewButtonTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
+            [closeButton addTarget:self action:@selector(alertViewButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
             closeButton.tag = i;
             [closeButton setTitle:[self.customButtonTitlesArray objectAtIndex:i] forState:UIControlStateNormal];
             [closeButton setTitleColor:[UIColor colorWithRed:0.0f green:0.5f blue:1.0f alpha:1.0f] forState:UIControlStateNormal];
@@ -239,7 +228,7 @@ CGFloat alertTitleLabelHeight = 44;
         for (int i=0; i<[self.customButtonsArray count]; i++) {
             UIButton *closeButton = [self.customButtonsArray objectAtIndex:i];
             closeButton.frame = CGRectMake(i * buttonWidth , container.bounds.size.height - buttonHeight, buttonWidth, buttonHeight);
-            [closeButton addTarget:self action:@selector(alertViewButtonTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
+            [closeButton addTarget:self action:@selector(alertViewButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
             closeButton.tag = i;
             [container addSubview:closeButton];
             
@@ -257,21 +246,21 @@ CGFloat alertTitleLabelHeight = 44;
         buttonSpacerHeight = kAlertViewDefaultButtonSpacerHeight;
     }
     
-    CGFloat containerViewContentWidth = CGRectGetWidth(self.containerViewContent.frame);
-    CGFloat containerViewContentHeight;
+    CGFloat customInputViewWidth = CGRectGetWidth(self.customInputView.frame);
+    CGFloat customInputViewHeight;
     
     if (self.isPopUpView) {
-        containerViewContentHeight = CGRectGetHeight(self.containerViewContent.frame);
+        customInputViewHeight = CGRectGetHeight(self.customInputView.frame);
     }
     else {
         if (self.alertTitleLabel.text.length<=0) {
-            containerViewContentHeight = CGRectGetHeight(self.containerViewContent.frame) + buttonHeight + buttonSpacerHeight;
+            customInputViewHeight = CGRectGetHeight(self.customInputView.frame) + buttonHeight + buttonSpacerHeight;
         }else {
-            containerViewContentHeight = CGRectGetHeight(self.containerViewContent.frame) + buttonHeight + buttonSpacerHeight + alertTitleLabelHeight;
+            customInputViewHeight = CGRectGetHeight(self.customInputView.frame) + buttonHeight + buttonSpacerHeight + alertTitleLabelHeight;
         }
     }
     
-    return CGSizeMake(containerViewContentWidth, containerViewContentHeight);
+    return CGSizeMake(customInputViewWidth, customInputViewHeight);
 }
 
 // Helper function: calculate and return the screen's size
@@ -320,10 +309,10 @@ CGFloat alertTitleLabelHeight = 44;
 /***********************************************/
 #pragma -mark IBAction Methods
 /***********************************************/
+- (IBAction)alertViewButtonClicked:(id)sender {
 
-- (IBAction)alertViewButtonTouchUpInside:(id)sender {
     if (self.delegate != NULL) {
-        [self.delegate alertViewButtonTouchUpInside:self clickedButtonAtIndex:[sender tag]];
+        [self.delegate alertView:self clickedButtonAtIndex:[sender tag]];
     }
     
     if (self.AlertViewButtonActionCompletionHandler != NULL) {
@@ -332,7 +321,7 @@ CGFloat alertTitleLabelHeight = 44;
 }
 
 // Default button behaviour
-- (void)alertViewButtonTouchUpInside: (MTGenericAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+- (void)alertView:(MTGenericAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSLog(@"Button Clicked! %d, %d", (int)buttonIndex, (int)[alertView tag]);
     [self close];
 }
@@ -474,6 +463,18 @@ CGFloat alertTitleLabelHeight = 44;
     } else {
         [self changeOrientationForIOS8:notification];
     }
+}
+
+/***********************************************/
+#pragma -mark Deallocate Method
+/***********************************************/
+
+- (void)dealloc {
+    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
 }
 
 @end

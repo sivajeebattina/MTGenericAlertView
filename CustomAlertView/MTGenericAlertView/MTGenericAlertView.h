@@ -1,6 +1,6 @@
 //
-//  AlertViewContainer.h
-//  CustomAlertView
+//  MTGenericAlertView.h
+//  MTGenericAlertView
 //
 //  Created by SivajeeBattina on 8/12/15.
 //  Copyright (c) 2015 Paradigmcreatives. All rights reserved.
@@ -10,14 +10,14 @@
 
 @protocol MTGenericAlertViewDelegate
 
-- (void)alertViewButtonTouchUpInside:(id)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
+- (void)alertView:(id)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 
 @end
 
 @interface MTGenericAlertView : UIView<MTGenericAlertViewDelegate>
 
 @property (nonatomic, strong) UIView *containerView;
-@property (nonatomic, strong) UIView *containerViewContent; 
+@property (nonatomic, strong) UIView *customInputView;
 @property (nonatomic, strong) NSArray *customButtonTitlesArray;
 @property (nonatomic, strong) NSArray *customButtonsArray;
 @property (nonatomic, strong) UILabel *alertTitleLabel;
@@ -26,7 +26,6 @@
 @property (nonatomic, assign) id<MTGenericAlertViewDelegate> delegate;
 
 @property (copy) void (^AlertViewButtonActionCompletionHandler)(MTGenericAlertView *alertView, int buttonIndex) ;
-
 
 - (id)init;
 

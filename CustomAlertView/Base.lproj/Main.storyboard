@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,22 +17,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twJ-iO-KYo">
-                                <rect key="frame" x="234" y="55" width="133" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="twJ-iO-KYo">
+                                <rect key="frame" x="152" y="74" width="100" height="47"/>
                                 <animations/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2QH-Ub-lra"/>
-                                    <constraint firstAttribute="width" constant="133" id="TQI-V8-eZq"/>
+                                    <constraint firstAttribute="width" constant="100" id="61H-ys-2fb"/>
+                                    <constraint firstAttribute="height" constant="47" id="7Gt-Be-bJ7"/>
                                 </constraints>
-                                <state key="normal" title="AlertWithTableView"/>
+                                <state key="normal" title="Alert WithTableView">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="alertWithTableViewClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="048-m6-lBI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQi-Pz-LIk">
-                                <rect key="frame" x="215" y="93" width="171" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="QQi-Pz-LIk">
+                                <rect key="frame" x="306" y="74" width="100" height="47"/>
                                 <animations/>
-                                <state key="normal" title="AlertWithCustomButtons"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="21C-NQ-RX7"/>
+                                    <constraint firstAttribute="width" constant="100" id="rfT-Hu-J2u"/>
+                                </constraints>
+                                <state key="normal" title="AlertWithCustomButtons">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="alertWithCustomButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8SR-oS-WQ4"/>
                                 </connections>
@@ -44,55 +54,75 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="828-KM-TnG">
-                                <rect key="frame" x="216" y="131" width="168" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="828-KM-TnG">
+                                <rect key="frame" x="152" y="127" width="100" height="47"/>
                                 <animations/>
-                                <state key="normal" title="AlertView With TextView"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="AlertView With TextView">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="alertWithTextView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wv2-mt-opg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vF0-ya-aEa">
-                                <rect key="frame" x="212" y="169" width="177" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vF0-ya-aEa">
+                                <rect key="frame" x="306" y="127" width="100" height="47"/>
                                 <animations/>
-                                <state key="normal" title="Whats App Like AlertView"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="AAl-cc-Fgh"/>
+                                    <constraint firstAttribute="height" constant="47" id="Rbk-Nx-Ofw"/>
+                                </constraints>
+                                <state key="normal" title="Whats App Like AlertView">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="whatsAppLikeAlertView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GcW-vz-wjW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXG-7I-GxD">
+                                <rect key="frame" x="250" y="294" width="100" height="47"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="Jmd-2N-GqD"/>
+                                    <constraint firstAttribute="width" constant="100" id="gay-CO-ThR"/>
+                                </constraints>
+                                <state key="normal" title="Filter PopView">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="popUpButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="USN-UN-luG"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pop ups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0B-WZ-aOX">
-                                <rect key="frame" x="269" y="215" width="63" height="21"/>
+                                <rect key="frame" x="269" y="241" width="63" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mO1-re-oFi">
-                                <rect key="frame" x="277" y="244" width="47" height="30"/>
-                                <animations/>
-                                <state key="normal" title="PopUp"/>
-                                <connections>
-                                    <action selector="popUpButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cnw-qR-OFj"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="twJ-iO-KYo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1jD-0R-KoK"/>
-                            <constraint firstItem="828-KM-TnG" firstAttribute="top" secondItem="QQi-Pz-LIk" secondAttribute="bottom" constant="8" id="2Bc-um-xRw"/>
-                            <constraint firstItem="mO1-re-oFi" firstAttribute="centerX" secondItem="C0B-WZ-aOX" secondAttribute="centerX" id="3Ow-yE-A7k"/>
-                            <constraint firstItem="QQi-Pz-LIk" firstAttribute="top" secondItem="twJ-iO-KYo" secondAttribute="bottom" constant="8" id="C9L-1I-N60"/>
+                            <constraint firstItem="vF0-ya-aEa" firstAttribute="leading" secondItem="QQi-Pz-LIk" secondAttribute="leading" id="02J-E6-MpT"/>
+                            <constraint firstItem="twJ-iO-KYo" firstAttribute="trailing" secondItem="xEK-pH-HUx" secondAttribute="trailing" constant="-92" id="0WK-98-6P2"/>
+                            <constraint firstItem="C0B-WZ-aOX" firstAttribute="top" secondItem="vF0-ya-aEa" secondAttribute="bottom" constant="67" id="0cO-C2-eWp"/>
+                            <constraint firstItem="828-KM-TnG" firstAttribute="top" secondItem="twJ-iO-KYo" secondAttribute="bottom" constant="6" id="2Gg-bh-YV8"/>
+                            <constraint firstItem="EXG-7I-GxD" firstAttribute="top" secondItem="C0B-WZ-aOX" secondAttribute="bottom" constant="32" id="3TM-Jj-Y9T"/>
+                            <constraint firstItem="QQi-Pz-LIk" firstAttribute="top" secondItem="xEK-pH-HUx" secondAttribute="bottom" constant="32" id="9Eq-os-FPJ"/>
+                            <constraint firstItem="twJ-iO-KYo" firstAttribute="top" secondItem="xEK-pH-HUx" secondAttribute="bottom" constant="32" id="9vc-2d-B08"/>
+                            <constraint firstItem="828-KM-TnG" firstAttribute="width" secondItem="twJ-iO-KYo" secondAttribute="width" id="Ckc-aT-m4J"/>
                             <constraint firstItem="xEK-pH-HUx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="1" id="GUu-iY-Zlp"/>
                             <constraint firstItem="xEK-pH-HUx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H9W-BB-ULM"/>
-                            <constraint firstItem="QQi-Pz-LIk" firstAttribute="centerX" secondItem="twJ-iO-KYo" secondAttribute="centerX" id="J20-t5-IOi"/>
-                            <constraint firstItem="twJ-iO-KYo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="UvW-If-1KG"/>
-                            <constraint firstItem="vF0-ya-aEa" firstAttribute="top" secondItem="828-KM-TnG" secondAttribute="bottom" constant="8" id="VDq-eo-wsB"/>
-                            <constraint firstItem="C0B-WZ-aOX" firstAttribute="top" secondItem="vF0-ya-aEa" secondAttribute="bottom" constant="16" id="X3U-01-eMe"/>
-                            <constraint firstItem="C0B-WZ-aOX" firstAttribute="centerX" secondItem="vF0-ya-aEa" secondAttribute="centerX" id="bwk-Bd-hKf"/>
-                            <constraint firstItem="vF0-ya-aEa" firstAttribute="centerX" secondItem="828-KM-TnG" secondAttribute="centerX" id="eb5-Qm-e4P"/>
-                            <constraint firstItem="828-KM-TnG" firstAttribute="centerX" secondItem="QQi-Pz-LIk" secondAttribute="centerX" id="lyU-gO-ZqA"/>
-                            <constraint firstItem="mO1-re-oFi" firstAttribute="top" secondItem="C0B-WZ-aOX" secondAttribute="bottom" constant="8" id="x0M-S7-x72"/>
+                            <constraint firstItem="vF0-ya-aEa" firstAttribute="top" secondItem="QQi-Pz-LIk" secondAttribute="bottom" constant="6" id="KVu-Qz-IUD"/>
+                            <constraint firstItem="EXG-7I-GxD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mx9-Bq-krC"/>
+                            <constraint firstItem="C0B-WZ-aOX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pxz-ag-RHR"/>
+                            <constraint firstItem="vF0-ya-aEa" firstAttribute="trailing" secondItem="QQi-Pz-LIk" secondAttribute="trailing" id="ZhU-Kz-wpJ"/>
+                            <constraint firstItem="QQi-Pz-LIk" firstAttribute="leading" secondItem="twJ-iO-KYo" secondAttribute="trailing" constant="54" id="mV4-rP-tYE"/>
+                            <constraint firstItem="828-KM-TnG" firstAttribute="height" secondItem="twJ-iO-KYo" secondAttribute="height" id="pNO-sD-Pzy"/>
+                            <constraint firstItem="828-KM-TnG" firstAttribute="leading" secondItem="twJ-iO-KYo" secondAttribute="leading" id="vce-69-Gac"/>
                         </constraints>
                     </view>
                 </viewController>

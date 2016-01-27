@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		A8AE77FC1B81C44F0080261E /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AE77FA1B81C44F0080261E /* close.png */; };
 		A8AE77FD1B81C44F0080261E /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AE77FB1B81C44F0080261E /* close@2x.png */; };
-		A8C7B1FB1C51158700C3CE0C /* emotion_smile.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C7B1FA1C51158700C3CE0C /* emotion_smile.png */; settings = {ASSET_TAGS = (); }; };
-		A8C7B1FD1C5116E700C3CE0C /* microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C7B1FC1C5116E700C3CE0C /* microphone.png */; settings = {ASSET_TAGS = (); }; };
+		A8C7B1FB1C51158700C3CE0C /* emotion_smile.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C7B1FA1C51158700C3CE0C /* emotion_smile.png */; };
+		A8C7B1FD1C5116E700C3CE0C /* microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C7B1FC1C5116E700C3CE0C /* microphone.png */; };
 		A8ECAF7E1B7B5A6A007E399A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ECAF7D1B7B5A6A007E399A /* main.m */; };
 		A8ECAF811B7B5A6A007E399A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ECAF801B7B5A6A007E399A /* AppDelegate.m */; };
 		A8ECAF841B7B5A6A007E399A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ECAF831B7B5A6A007E399A /* ViewController.m */; };
@@ -19,11 +19,11 @@
 		A8ECAF8C1B7B5A6A007E399A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8ECAF8A1B7B5A6A007E399A /* LaunchScreen.xib */; };
 		A8ECAF981B7B5A6A007E399A /* CustomAlertViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ECAF971B7B5A6A007E399A /* CustomAlertViewTests.m */; };
 		A8ECAFA31B7B6339007E399A /* MTGenericAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ECAFA21B7B6339007E399A /* MTGenericAlertView.m */; };
-		A8F003FC1C51F18500E3C2FC /* iconDownArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A8F003FB1C51F18500E3C2FC /* iconDownArrow.png */; settings = {ASSET_TAGS = (); }; };
-		A8F003FE1C51F19000E3C2FC /* checkbox_unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = A8F003FD1C51F19000E3C2FC /* checkbox_unchecked.png */; settings = {ASSET_TAGS = (); }; };
-		A8F004001C51F25500E3C2FC /* Dropdown_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8F003FF1C51F25500E3C2FC /* Dropdown_2x.png */; settings = {ASSET_TAGS = (); }; };
-		A8F004021C51F26900E3C2FC /* Dropdown_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8F004011C51F26900E3C2FC /* Dropdown_3x.png */; settings = {ASSET_TAGS = (); }; };
-		A8F004041C51FCF700E3C2FC /* Error.gif in Resources */ = {isa = PBXBuildFile; fileRef = A8F004031C51FCF700E3C2FC /* Error.gif */; settings = {ASSET_TAGS = (); }; };
+		A8F003FC1C51F18500E3C2FC /* iconDownArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A8F003FB1C51F18500E3C2FC /* iconDownArrow.png */; };
+		A8F003FE1C51F19000E3C2FC /* checkbox_unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = A8F003FD1C51F19000E3C2FC /* checkbox_unchecked.png */; };
+		A8F004001C51F25500E3C2FC /* Dropdown_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8F003FF1C51F25500E3C2FC /* Dropdown_2x.png */; };
+		A8F004021C51F26900E3C2FC /* Dropdown_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8F004011C51F26900E3C2FC /* Dropdown_3x.png */; };
+		A8F004041C51FCF700E3C2FC /* Error.gif in Resources */ = {isa = PBXBuildFile; fileRef = A8F004031C51FCF700E3C2FC /* Error.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -220,7 +220,7 @@
 		A8ECAF701B7B5A6A007E399A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Paradigmcreatives;
 				TargetAttributes = {
 					A8ECAF771B7B5A6A007E399A = {
@@ -350,6 +350,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -364,7 +365,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -400,7 +401,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -415,6 +416,7 @@
 				INFOPLIST_FILE = CustomAlertView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paradigmcreatives.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -426,6 +428,7 @@
 				INFOPLIST_FILE = CustomAlertView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paradigmcreatives.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -444,6 +447,7 @@
 				);
 				INFOPLIST_FILE = CustomAlertViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paradigmcreatives.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CustomAlertView.app/CustomAlertView";
 			};
@@ -459,6 +463,7 @@
 				);
 				INFOPLIST_FILE = CustomAlertViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paradigmcreatives.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CustomAlertView.app/CustomAlertView";
 			};
